@@ -4,9 +4,9 @@
   <!-- html 짜는곳 -->
 
   <div class="menu">
-    <a>Home</a>
-    <a>products</a>
-    <a>About</a>
+    <!-- <a v-for="name in menu" : key="{{name}}">Home</a> -->
+    <a v-for="(name, index) in menu" :key="index">{{ name }}</a>
+    <!-- key에는 반복문에서 증가하는 index임 0,1,2,3,4,5,6 이렇게 증가함  -->
   </div>
   <div>
     <h4>{{ product[0] }}</h4>
@@ -43,6 +43,7 @@ export default {
       price2: 500,
       style1: "color:blue",
       product: ["역삼동원룸", "천호동원룸", "마포구원룸"],
+      menu: ["Home,Products,randum"],
     };
   },
   components: {
@@ -65,8 +66,8 @@ export default {
   background: darkblue;
   padding: 15px;
   border-radius: 5px;
-} 
-.menu a {
+}
+  .menu a {
   color: white;
   padding: 10px;
 }
